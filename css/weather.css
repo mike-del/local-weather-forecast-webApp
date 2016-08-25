@@ -8,12 +8,15 @@
 .weather-high-low
 */
 
-.weather-box {
+.weather_box {
 	display: none;
 }
+.description , .d_title , .d_txt {
+		display: none;
+	}
 
 @media only screen and (min-width: 400px) {
-	.weather-box  {
+	.weather_box  {
 		display: flex;
 		flex-flow: row wrap;
 		max-width: 20%;
@@ -42,13 +45,10 @@
 		flex: 1;
 		background-color: white;
 		margin-bottom: .5rem;
-		transition: all .2s ease-in-out;
+		transition: all .3s ease-in-out;
 	}
 
-	.calandar_day:hover {
-		transform: scale(1.15);
-
-	}
+	
 
 	.weather-day {
 		display: flex;
@@ -75,6 +75,15 @@
 		order: 999;
 	}
 
+	
+
+}
+
+@media only screen and (min-width: 662px) {
+	.calandar_day:hover {
+		transform: scale(1.15);
+
+	}
 	.description {
 		display: flex;
 		flex-flow: row wrap;
@@ -99,10 +108,9 @@
 		align-items: center;
 		flex-basis: 100%;
 	}
-
 }
 
-@media only screen and (min-width: 934px) and (max-width:1271px) {
+@media only screen and (min-width: 1005px) and (max-width:1363px) {
 	#last_day {
 		display: none;
 	}
