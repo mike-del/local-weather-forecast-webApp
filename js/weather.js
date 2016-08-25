@@ -18,11 +18,11 @@ $.ajax({
 		var all_description = [] ;
 		
 		//Print-to-page set-up: using html wrapper id and creating div with js. 
-		var weatherReport = $('body').append("<div class='weather-box'>");
-		var weatherBox = $('.weather-box');
+		var weatherReport = $('body').append("<div class='weather_box'>");
+		var weatherBox = $('.weather_box');
 		
 		//Print: local city, current temperature and current weather icon. 
-		weatherReport += weatherBox.append("<div class= 'current-container'><h3 class='weather-location-current'>" + city + ": "  + temp + "&#x2109;" + icon + "</h3></div>");
+		weatherBox.append("<div class= 'current-container'><h3 class='weather-location-current'>" + city + ": "  + temp + "&#x2109;" + icon + "</h3></div>");
 		
 		//Calandar Forecast: loop for forcast calandar. includes day & icon.
 		for (var i = 0; i < 8; i++) {
@@ -35,7 +35,7 @@ $.ajax({
 				all_description[day] =  text;
 				// Create: <div class='calandar_day'> & <p class='weather-day'>.
 				// Print: day and day icon.
-				weatherReport += weatherBox.append("<div class='calandar_day'><p class='weather-day'>" + day + "</p>" + day_icon +"</div>");
+				weatherBox.append("<div class='calandar_day'><p class='weather-day'>" + day + "</p>" + day_icon +"</div>");
 				//Hide calandar_day for night
 				$( ".calandar_day:contains('Night')" ).hide();
 		};
@@ -62,7 +62,7 @@ $.ajax({
 				for (var key in all_description) {
 					var first3_3_letters = (key[0]+key[1]+key[2]);
 					// console.log(first3_3_letters);
-					if (first_3_letters === first3_3_letters) {weatherReport += weatherBox.append("<div class='description'><h2 class='d_title'>" + key + ": </h2><p class='d_txt'>" + all_description[key] + "</p></div>");} else {}	
+					if (first_3_letters === first3_3_letters) {weatherBox.append("<div class='description'><h2 class='d_title'>" + key + ": </h2><p class='d_txt'>" + all_description[key] + "</p></div>");} else {}	
 				}
 				
 			 },
@@ -76,6 +76,7 @@ $.ajax({
 		$('.calandar_day:last-child').prev().attr('id', 'last_day');
 		
 		//access the Weather Underground logo	
-		weatherReport += weatherBox.append(img.replace(/link/i ,current['image']['url']).replace(/class_name/i ,'logoWU'));
+		// weatherReport += weatherBox.append(img.replace(/link/i ,current['image']['url']).replace(/class_name/i ,'logoWU'));
+		weatherBox.append(img.replace(/link/i ,current['image']['url']).replace(/class_name/i ,'logoWU'));
 	}
 });
