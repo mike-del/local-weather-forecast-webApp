@@ -22,9 +22,9 @@ $.ajax({
 		var weatherBox = $('.weather_box');
 		
 		//Print: local city, current temperature and current weather icon. 
-		weatherBox.append("<div class= 'current-container'><h3 class='weather-location-current'>" + city + ": "  + temp + "&#x2109;" + icon + "</h3></div>");
+		weatherBox.append("<div class= 'current-container text-center'><h3 class='weather-location-current'>" + city + ": "  + temp + "&#x2109;" + icon + "</h3></div>");
 
-		var weatherBoxRow = $('.current-container').append("<div class='weatherBoxRow row'>");
+		var weatherBoxRow = $('.current-container').append("<div id='weatherBoxRow' class='weatherBoxRow row'>");
 		var weatherBox = $('.weatherBoxRow');
 		
 		
