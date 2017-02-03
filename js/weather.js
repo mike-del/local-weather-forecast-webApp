@@ -1,8 +1,8 @@
 "use strict";
 //Weather API Test
-var api_key = config.MY_API;
+// var api_key = config.MY_API;
 $.ajax({
-	url : "http://api.wunderground.com/api/" + api_key + "/geolookup/conditions/forecast/lang:EN/bestfct:1/q/autoip.json",
+	url : "http://api.wunderground.com/api/6c2942fb7e0ba4e7/geolookup/conditions/forecast/lang:EN/bestfct:1/q/autoip.json",
 	dataType : "jsonp",
 	success : function(parsed_json) {
 		
