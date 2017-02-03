@@ -18,7 +18,7 @@ $.ajax({
 		var all_description = [] ;
 		
 		//Print-to-page set-up: using html wrapper id and creating div with js. 
-		var weatherReport = $('.container').append("<div class='weather_box'>");
+		var weatherReport = $('#weather_container').append("<div class='weather_box'>");
 		var weatherBox = $('.weather_box');
 		
 		//Print: local city, current temperature and current weather icon. 
@@ -39,7 +39,7 @@ $.ajax({
 				all_description[day] =  text;
 				// Create: <div class='calandar_day'> & <p class='weather-day'>.
 				// Print: day and day icon.
-				weatherBox.append("<div class='calandar_day col-xs-3 col-sm-2 col-md-1 col-lg-1'><p class='weather-day'>" + day + "</p>" + day_icon +"</div>");
+				weatherBox.append("<div id='calandar_day' class='calandar_day col-xs-3 col-sm-3 col-md-3 col-lg-3'><p class='weather-day'>" + day + "</p>" + day_icon +"</div>");
 				//Hide calandar_day for night
 				$( ".calandar_day:contains('Night')" ).hide();
 		};
